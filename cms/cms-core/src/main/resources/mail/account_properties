@@ -1,0 +1,9 @@
+{
+  "email_for_notification": "JavaTraining.Cms@gmail.com",
+  "password_for_notification": "gniniartavaj"
+  "email_for_gitlab_notification": "JavaTraining.Cms@gmail.com",
+  "password_for_gitlab_notification": "gniniartavaj",
+  "account_for_sms_notification": "soapgateway",
+  "password_for_sms_notification": ""
+  "account_phone_number": "380934110628"
+}

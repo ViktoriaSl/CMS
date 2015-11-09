@@ -1,0 +1,7 @@
+<div>
+    <div ui-view="header"></div>
+    <div ng-show="blockUntilServerAnswered" class="pull-right">
+        <span><img class="img-wait-server-resp" ng-src="angular/img/wait.gif"/></span>
+    </div>
+    <div ui-view="body" class="content"></div>
+</div>

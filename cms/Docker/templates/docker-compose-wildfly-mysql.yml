@@ -1,0 +1,25 @@
+mysqldb:
+  image: mysql:latest
+  environment:
+    MYSQL_DATABASE: cms
+    MYSQL_USER: mysql
+    MYSQL_PASSWORD: mysql
+    MYSQL_ROOT_PASSWORD: supersecret
+  volumes:
+    - /srv/docker/mysql/data/db:/var/lib/mysql
+    - /srv/docker/mysql/conf/my.cnf:/etc/mysql/my.cnf
+    - /srv/docker/mysql/conf/locale:/etc/default/locale
+  labels:
+    org.javatraining.cms.version: "test"
+mywildfly:
+  dockerfile: Dockerfile-wildfly
+  build: .
+  links:
+    - mysqldb:db
+  ports:
+    - "{{WILDFLY_IP}}:{{WILDFLY_PORT}}:8080"
+    - "{{WILDFLY_IP}}:{{SMTP_PORT}}:{{SMTP_PORT}}"
+  labels:
+    org.javatraining.cms.version: "test"
+
+

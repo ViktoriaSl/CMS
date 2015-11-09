@@ -1,0 +1,6 @@
+FROM jboss/wildfly:latest
+
+ADD customization /opt/jboss/wildfly/customization/
+ADD config        /opt/jboss/wildfly/customization/config/
+
+CMD ["/opt/jboss/wildfly/customization/execute.sh"]
